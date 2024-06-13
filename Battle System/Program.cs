@@ -16,6 +16,8 @@ namespace Battle_System
             Console.WriteLine($"You have a {player.GetWeaponName()}, it is {player.GetWeaponDescription()}");
 
             Enemy enemy = new Skeleton();
+            //Enemy enemy = new Goblin();
+            //Enemy enemy = new Ogre();
 
             Console.WriteLine("Press enter to start battle...");
             Console.ReadLine();
@@ -30,17 +32,25 @@ namespace Battle_System
 
             string playerClassChoice = OptionCheck("Select your class from the list below:\n" +
                 "1: Fighter\n" +
-                "2: Not Implemented\n" +
-                "3: Not Implemented", 
-                new string[] { "1" });
+                "2: Archer\n" +
+                "3: Brute", 
+                new string[] { "1","2","3" });
 
             if (playerClassChoice == "1")
             {
                 player = new Fighter(playerName);
             }
+            if (playerClassChoice == "2") 
+            {
+                player = new Archer(playerName);
+            }
+            if (playerClassChoice == "3") 
+            { 
+                player = new Brute(playerName);
+            }
 
             return player;
-        }
+        }   
 
         static string PresenceCheck(string message)
         {

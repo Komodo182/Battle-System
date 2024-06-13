@@ -33,7 +33,7 @@ namespace Battle_System.Classes.Entities
         {
             return name;
         }
-        public int Attack()
+        public virtual int Attack()
         {
             if (rng.NextDouble() < accuracy)
             {
@@ -75,6 +75,10 @@ namespace Battle_System.Classes.Entities
         public string GetWeaponDescription()
         {
             return weapon.GetDescription();
+        }
+        public int GetMp()
+        {
+            return mp;
         }
     }
 }

@@ -26,19 +26,37 @@ namespace Battle_System.Classes
             {
                 int PlayerAttack = player.Attack();
                 enemy.Damage(PlayerAttack);
-                Console.WriteLine($"you attack the {enemy.GetName()} " +
+                Console.WriteLine($"You attack the {enemy.GetName()} " +
                     $"with your {player.GetWeaponName()} " +
                     $"and deal {PlayerAttack} damage");
                 Console.WriteLine($"{enemy.GetName()} has {enemy.GetHp()} health");
 
                 Console.ReadLine();
 
+                if (enemy.GetHp() == 0)
+                {
+                    over = true;
+                    Console.WriteLine($"You have defeated the {enemy.GetName()}");
+                    break;
+                }
+               
+                Console.ReadLine();
+
                 int enemyAttack = enemy.Attack();
                 player.Damage(enemyAttack);
-                Console.WriteLine($"the {enemy.GetName()} attacks you " +
+                Console.WriteLine($"The {enemy.GetName()} attacks you " +
                     $"with a {enemy.GetWeaponName()} " +
                     $"and deals {enemyAttack} damage");
-                Console.WriteLine($"you have {player.GetHp()} health");
+                Console.WriteLine($"You have {player.GetHp()} health");
+
+                Console.ReadLine();
+                
+                if (player.GetHp() == 0)
+                {
+                    over = true;
+                    Console.WriteLine($"You have been defeated by the {enemy.GetName()}");
+                    break;
+                }
 
                 Console.ReadLine();
             }

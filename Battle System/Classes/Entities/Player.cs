@@ -184,7 +184,7 @@ namespace Battle_System.Classes.Entities
                 "1: Basic Attack\n" +
                 "2: Ground Smash (Requires minimum of 2 mana)\n" +
                 "3: Tear (Requires minimum of 5 mana)\n"+
-                "4: Left Right Goodnight (Reuqires minimum of 12 mana)",
+                "4: Left, Right, Goodnight (Reuqires minimum of 12 mana)",
                 new string[] { "1", "2", "3" , "4" });
 
             if (playerAttackChoice == "1")
@@ -210,7 +210,7 @@ namespace Battle_System.Classes.Entities
             if (playerAttackChoice == "4" && mp >= 12)
             {
                 mp = mp - 12;
-                Console.WriteLine("You chose 'Left,Right,Goodnight' you've dealt a deadly blow dragging the blade from the scalp down to the crotch.");
+                Console.WriteLine("You chose 'Left, Right, Goodnight' you've dealt a deadly blow dragging the blade from the scalp down to the crotch.");
                 return 1000;
             }
             else
